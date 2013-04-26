@@ -1,6 +1,8 @@
 package net.redleon.interfaces;
 
-public interface Ipieza {
+import net.redleon.estructuras.Nodo;
+
+public interface Ipieza<T> {
 	
 	public static char ARRIBA = 'U';
 	public static char ABAJO = 'D';
@@ -8,7 +10,7 @@ public interface Ipieza {
 	public static char DERECHA = 'R';
 	
 	
-	public void mover();
+	public void mover(Nodo<T> start);
 	
 	public Integer getX();
 	public Integer getY();

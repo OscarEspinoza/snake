@@ -3,7 +3,7 @@ package net.redleon.estructuras;
 
 public class ListaLigada<T> {
 
-	private Nodo<T> start;
+	protected Nodo<T> start;
 
 	public void agregaInicio(T dato) {
 		Nodo<T> p = start;
@@ -35,7 +35,7 @@ public class ListaLigada<T> {
 				q = p;
 				p = p.getSiguiente();
 			}
-			elemento = q;
+			elemento = p;
 			if (q == p) {
 				start = null;
 			} else {
@@ -45,6 +45,21 @@ public class ListaLigada<T> {
 		return elemento;
 	}
 
+	public Nodo<T> obtenFinalSinEliminar() {
+		Nodo<T> elemento = null;
+		if (start != null) {
+			Nodo<T> p = start;
+			Nodo<T> q = start;
+			while (p.getSiguiente() != null) {
+				q = p;
+				p = p.getSiguiente();
+			}
+			elemento = p;
+			
+		}
+		return elemento;
+	}
+	
 	public Nodo<T> obtenInicio() {
 		Nodo<T> elemento = null;
 		if (start != null) {

@@ -4,17 +4,33 @@ import net.redleon.interfaces.Icola;
 
 public class Cola implements Icola<Info>{
 
+	ListaLigada<Info> lista;
 		
 	@Override
 	public Info elimina() {
-		// TODO Auto-generated method stub
-		return null;
+		return lista.obtenFinal().getDato();
 	}
 
 	@Override
+	public Info obten() {
+		return lista.obtenFinalSinEliminar().getDato();
+	}
+	
+	@Override
 	public void inserta(Info valor) {
-		// TODO Auto-generated method stub
+		lista.agregaInicio(valor);
 		
 	}
+
+	@Override
+	public boolean isEmpty() {
+		if(lista.start == null){
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	
 
 }
