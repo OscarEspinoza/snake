@@ -1,6 +1,5 @@
 package net.redleon.estructuras;
 
-
 public class ListaLigada<T> {
 
 	protected Nodo<T> start;
@@ -47,19 +46,23 @@ public class ListaLigada<T> {
 
 	public Nodo<T> obtenFinalSinEliminar() {
 		Nodo<T> elemento = null;
-		if (start != null) {
-			Nodo<T> p = start;
-			Nodo<T> q = start;
-			while (p.getSiguiente() != null) {
-				q = p;
-				p = p.getSiguiente();
+		if (start.getSiguiente() == null) {
+			elemento = start;
+		} else {
+			if (start != null) {
+				Nodo<T> p = start;
+				Nodo<T> q = start;
+				while (p.getSiguiente() != null) {
+					q = p;
+					p = p.getSiguiente();
+				}
+				elemento = p;
+
 			}
-			elemento = p;
-			
 		}
 		return elemento;
 	}
-	
+
 	public Nodo<T> obtenInicio() {
 		Nodo<T> elemento = null;
 		if (start != null) {
@@ -70,13 +73,12 @@ public class ListaLigada<T> {
 
 	public void recorrerRecursivo(Nodo<T> p) {
 		if (p != null) {
-			System.out.println("Dato:" + p.getDato().toString());
 			recorrerRecursivo(p.getSiguiente());
 		}
 
 	}
-	
-	public Nodo<T> getStart(){
+
+	public Nodo<T> getStart() {
 		return start;
 	}
 }

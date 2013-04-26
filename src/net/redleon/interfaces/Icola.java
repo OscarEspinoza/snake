@@ -9,5 +9,5 @@ public interface Icola<T> {
 	public void inserta(T valor);
 	
 	public boolean isEmpty();
-
+	
 }
