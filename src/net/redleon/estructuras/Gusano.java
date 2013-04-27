@@ -101,4 +101,8 @@ public class Gusano extends ListaLigada<Info> {
 	public String toString() {
 		return "Gusano: " + toS(start, "");
 	}
+	
+	public void detectaColision(){
+		
+	}
 }
